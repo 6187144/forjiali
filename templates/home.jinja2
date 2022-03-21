@@ -2,13 +2,25 @@
 <html lang="en">
 
 <head>
-<title> {{greet}},{{name}} </title>
-<link rel="stylesheet" href="static/style.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="static/main1.css" />
 </head>
-<body> 
-<h1> {{greet}},{{name}}</h1>
-<a href="/away">Away</a>
-<img src="static/jinja.png" alt="image"
-style="width:170px;"
+
+<body>
+
+    <nav id="menu-main">
+        <ul>
+            {% for item in items %}
+            <li><a href="/{{item[1]}}">{{item[0]}}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <h1 class="header">{{title}}</h1>
+    {{content|safe}}
+
 </body>
+
 </html>
