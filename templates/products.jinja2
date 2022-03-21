@@ -19,7 +19,18 @@
         </ul>
     </nav>
     <h1 class="header">{{title}}</h1>
-    {{content|safe}}
+    <div class="gallery">
+        {% for gi in products %}
+            <div class="gallery-row">
+                <div class="gallery-image">
+                    <img src="./img/gallery/{{gi[0]}}" />
+                </div>
+                <div>{{gi[1]}}</div>
+                <div id="unit">$</div>
+                <div id="price">{{gi[2]}}</div>
+            </div>
+        {% endfor %}
+    </div>
 
 </body>
 <footer>
